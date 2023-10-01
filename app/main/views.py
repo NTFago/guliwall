@@ -26,7 +26,7 @@ def index():
         query = current_user.followed_posts
     else:
         query = Post.query
-    pagination = query.order_by(Post.timestamp.desc()).paginate(
+    pagination = query.order_by(Post.timestamp).paginate(
         page=page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
@@ -38,7 +38,7 @@ def index():
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     page = request.args.get('page', 1, type=int)
-    pagination = user.posts.order_by(Post.timestamp.desc()).paginate(
+    pagination = user.posts.order_by(Post.timestamp).paginate(
         page=page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
