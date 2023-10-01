@@ -27,6 +27,7 @@
                 {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('main.user', username=current_user.username) }}">个人资料</a></li>
                 {% endif %}
+                <li><a href="https://azz.ee/xiaoyuan">赞助</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.can(Permission.MODERATE) %}

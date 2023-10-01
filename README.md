@@ -3,7 +3,7 @@
 
 此网站是flask书本案例改造而成，用于古丽学子交流
 
-[上墙玩玩](guliwall.xyz)
+[上墙玩玩](http://guliwall.xyz)
 
 
 ## 下一步更新计划
