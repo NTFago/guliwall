@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}古丽校园墙 - 验证您的账号{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>
+        {{ current_user.username }}，您好!
+    </h1>
+    <h3>您还没有验证你的账号</h3>
+    <p>
+        在您能够访问这个页面之前，您需要验证你的账号
+        请检查您的邮箱，您应该已经收到一封带有验证链接的邮件了。
+    </p>
+    <p>
+        需要另一封邮件？
+        <a href="{{ url_for('auth.resend_confirmation') }}">点击这里</a>
+    </p>
+</div>
+{% endblock %}
